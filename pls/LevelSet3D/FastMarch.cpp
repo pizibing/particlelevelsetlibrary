@@ -4,8 +4,8 @@ FastMarch::FastMarch(int nx,int ny, int nz, Double hi)
     : Nx(nx), Ny(ny), Nz(nz), h(hi), hInv(1./hi), size((nx+2)*(ny+2)*(nz+2)), 
       dj(nx+2), dk((nx+2)*(ny+2)), NxInv(1./(nx+2)), NyNxInv(1./((nx+2)*(ny+2)))
 {
-	FMHeap.reserve(size);
-	ClosePoints.reserve(size);
+	FMHeap.resize(size);
+	ClosePoints.resize(size);
 	grid = new FMContainer[size];
 }
 
